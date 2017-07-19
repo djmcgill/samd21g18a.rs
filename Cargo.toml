@@ -1,0 +1,10 @@
+[package]
+name = "samd21g18a"
+version = "0.1.0"
+authors = ["David McGillicuddy <contact@djmcgill.co.uk>"]
+
+[dependencies]
+bare-metal = "0.1.*"
+vcell = "0.1.*"
+cortex-m-rt = "0.3.*"
+cortex-m = "0.3.*"

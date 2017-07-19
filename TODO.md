@@ -1,0 +1,3 @@
+- fix samd21g18a.rs errors
+- install arduino libs
+- populate memory.x with arduino values
