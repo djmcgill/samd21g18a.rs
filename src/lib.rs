@@ -11,12 +11,12 @@
 #![ feature ( const_fn ) ]
 #![ no_std ]
 
-extern crate cortex_m ;
+extern crate cortex_m;
 #[macro_reexport(default_handler, exception)]
 #[cfg(feature = "rt")]
-extern crate cortex_m_rt ;
-extern crate bare_metal ;
-extern crate vcell ;
+extern crate cortex_m_rt;
+extern crate bare_metal;
+extern crate vcell;
 use core::ops::Deref;
 use bare_metal::Peripheral;
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -448,7 +448,7 @@ pub mod interrupt {
     }
     #[cfg(feature = "rt")]
     #[macro_export]
-    macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
+    macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * }; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path; f ( unsafe { & mut LOCALS } ); } }; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME; let f : fn ( ) = $ path; f ( ); } } }
 }
 pub use cortex_m::peripheral::CPUID;
 pub use cortex_m::peripheral::DCB;
@@ -52246,66 +52246,6 @@ impl Deref for PORT {
         &self.register_block
     }
 }
-#[doc = "Serial Communication Interface 1"]
-pub const SERCOM1: Peripheral<SERCOM1> = unsafe { Peripheral::new(1107299328) };
-#[doc = r" Register block"]
-pub struct SERCOM1 {
-    register_block: sercom0::RegisterBlock,
-}
-impl Deref for SERCOM1 {
-    type Target = sercom0::RegisterBlock;
-    fn deref(&self) -> &sercom0::RegisterBlock {
-        &self.register_block
-    }
-}
-#[doc = "Serial Communication Interface 2"]
-pub const SERCOM2: Peripheral<SERCOM2> = unsafe { Peripheral::new(1107300352) };
-#[doc = r" Register block"]
-pub struct SERCOM2 {
-    register_block: sercom0::RegisterBlock,
-}
-impl Deref for SERCOM2 {
-    type Target = sercom0::RegisterBlock;
-    fn deref(&self) -> &sercom0::RegisterBlock {
-        &self.register_block
-    }
-}
-#[doc = "Serial Communication Interface 3"]
-pub const SERCOM3: Peripheral<SERCOM3> = unsafe { Peripheral::new(1107301376) };
-#[doc = r" Register block"]
-pub struct SERCOM3 {
-    register_block: sercom0::RegisterBlock,
-}
-impl Deref for SERCOM3 {
-    type Target = sercom0::RegisterBlock;
-    fn deref(&self) -> &sercom0::RegisterBlock {
-        &self.register_block
-    }
-}
-#[doc = "Serial Communication Interface 4"]
-pub const SERCOM4: Peripheral<SERCOM4> = unsafe { Peripheral::new(1107302400) };
-#[doc = r" Register block"]
-pub struct SERCOM4 {
-    register_block: sercom0::RegisterBlock,
-}
-impl Deref for SERCOM4 {
-    type Target = sercom0::RegisterBlock;
-    fn deref(&self) -> &sercom0::RegisterBlock {
-        &self.register_block
-    }
-}
-#[doc = "Serial Communication Interface 5"]
-pub const SERCOM5: Peripheral<SERCOM5> = unsafe { Peripheral::new(1107303424) };
-#[doc = r" Register block"]
-pub struct SERCOM5 {
-    register_block: sercom0::RegisterBlock,
-}
-impl Deref for SERCOM5 {
-    type Target = sercom0::RegisterBlock;
-    fn deref(&self) -> &sercom0::RegisterBlock {
-        &self.register_block
-    }
-}
 #[doc = "System Control"]
 pub const SYSCTRL: Peripheral<SYSCTRL> = unsafe { Peripheral::new(1073743872) };
 #[doc = "System Control"]
@@ -61576,30 +61516,6 @@ pub struct SYSCTRL {
 impl Deref for SYSCTRL {
     type Target = sysctrl::RegisterBlock;
     fn deref(&self) -> &sysctrl::RegisterBlock {
-        &self.register_block
-    }
-}
-#[doc = "Basic Timer Counter 4"]
-pub const TC4: Peripheral<TC4> = unsafe { Peripheral::new(1107308544) };
-#[doc = r" Register block"]
-pub struct TC4 {
-    register_block: tc3::RegisterBlock,
-}
-impl Deref for TC4 {
-    type Target = tc3::RegisterBlock;
-    fn deref(&self) -> &tc3::RegisterBlock {
-        &self.register_block
-    }
-}
-#[doc = "Basic Timer Counter 5"]
-pub const TC5: Peripheral<TC5> = unsafe { Peripheral::new(1107309568) };
-#[doc = r" Register block"]
-pub struct TC5 {
-    register_block: tc3::RegisterBlock,
-}
-impl Deref for TC5 {
-    type Target = tc3::RegisterBlock;
-    fn deref(&self) -> &tc3::RegisterBlock {
         &self.register_block
     }
 }
@@ -80439,24 +80355,8 @@ pub struct Peripherals<'a> {
     pub PM: &'a PM,
     #[doc = "PORT"]
     pub PORT: &'a PORT,
-    #[doc = "SERCOM1"]
-    pub SERCOM1: &'a SERCOM1,
-    #[doc = "SERCOM2"]
-    pub SERCOM2: &'a SERCOM2,
-    #[doc = "SERCOM3"]
-    pub SERCOM3: &'a SERCOM3,
-    #[doc = "SERCOM4"]
-    pub SERCOM4: &'a SERCOM4,
-    #[doc = "SERCOM5"]
-    pub SERCOM5: &'a SERCOM5,
     #[doc = "SYSCTRL"]
     pub SYSCTRL: &'a SYSCTRL,
-    #[doc = "TC4"]
-    pub TC4: &'a TC4,
-    #[doc = "TC5"]
-    pub TC5: &'a TC5,
-    #[doc = "TCC0"]
-    pub TCC0: &'a TCC0,
     #[doc = "TCC1"]
     pub TCC1: &'a TCC1,
     #[doc = "TCC2"]
@@ -80495,15 +80395,7 @@ impl<'a> Peripherals<'a> {
             PAC2: &*PAC2.get(),
             PM: &*PM.get(),
             PORT: &*PORT.get(),
-            SERCOM1: &*SERCOM1.get(),
-            SERCOM2: &*SERCOM2.get(),
-            SERCOM3: &*SERCOM3.get(),
-            SERCOM4: &*SERCOM4.get(),
-            SERCOM5: &*SERCOM5.get(),
             SYSCTRL: &*SYSCTRL.get(),
-            TC4: &*TC4.get(),
-            TC5: &*TC5.get(),
-            TCC0: &*TCC0.get(),
             TCC1: &*TCC1.get(),
             TCC2: &*TCC2.get(),
             WDT: &*WDT.get(),
