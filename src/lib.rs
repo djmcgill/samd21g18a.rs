@@ -35206,10 +35206,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> BITDELAYR {
-                match value {
-                    false => BITDELAYR::LJ,
-                    true => BITDELAYR::I2S,
-                }
+                if value { BITDELAYR::I2S } else { BITDELAYR::LJ }
             }
             #[doc = "Checks if the value of the field is `LJ`"]
             #[inline(always)]
@@ -35253,10 +35250,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> FSSELR {
-                match value {
-                    false => FSSELR::SCKDIV,
-                    true => FSSELR::FSPIN,
-                }
+                if value { FSSELR::FSPIN } else { FSSELR::SCKDIV }
             }
             #[doc = "Checks if the value of the field is `SCKDIV`"]
             #[inline(always)]
@@ -35321,10 +35315,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> SCKSELR {
-                match value {
-                    false => SCKSELR::MCKDIV,
-                    true => SCKSELR::SCKPIN,
-                }
+                if value { SCKSELR::SCKPIN } else { SCKSELR::MCKDIV }
             }
             #[doc = "Checks if the value of the field is `MCKDIV`"]
             #[inline(always)]
@@ -35368,10 +35359,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> MCKSELR {
-                match value {
-                    false => MCKSELR::GCLK,
-                    true => MCKSELR::MCKPIN,
-                }
+                if value { MCKSELR::MCKPIN } else { MCKSELR::GCLK }
             }
             #[doc = "Checks if the value of the field is `GCLK`"]
             #[inline(always)]
@@ -38574,10 +38562,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> TXSAMER {
-                match value {
-                    false => TXSAMER::ZERO,
-                    true => TXSAMER::SAME,
-                }
+                if value { TXSAMER::SAME } else { TXSAMER::ZERO }
             }
             #[doc = "Checks if the value of the field is `ZERO`"]
             #[inline(always)]
@@ -38621,10 +38606,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> CLKSELR {
-                match value {
-                    false => CLKSELR::CLK0,
-                    true => CLKSELR::CLK1,
-                }
+                if value { CLKSELR::CLK1 } else { CLKSELR::CLK0 }
             }
             #[doc = "Checks if the value of the field is `CLK0`"]
             #[inline(always)]
@@ -38668,10 +38650,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> SLOTADJR {
-                match value {
-                    false => SLOTADJR::RIGHT,
-                    true => SLOTADJR::LEFT,
-                }
+                if value { SLOTADJR::LEFT } else { SLOTADJR::RIGHT }
             }
             #[doc = "Checks if the value of the field is `RIGHT`"]
             #[inline(always)]
@@ -38807,10 +38786,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> WORDADJR {
-                match value {
-                    false => WORDADJR::RIGHT,
-                    true => WORDADJR::LEFT,
-                }
+                if value { WORDADJR::LEFT } else { WORDADJR::RIGHT }
             }
             #[doc = "Checks if the value of the field is `RIGHT`"]
             #[inline(always)]
@@ -38910,10 +38886,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> BITREVR {
-                match value {
-                    false => BITREVR::MSBIT,
-                    true => BITREVR::LSBIT,
-                }
+                if value { BITREVR::LSBIT } else { BITREVR::MSBIT }
             }
             #[doc = "Checks if the value of the field is `MSBIT`"]
             #[inline(always)]
@@ -39125,10 +39098,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> MONOR {
-                match value {
-                    false => MONOR::STEREO,
-                    true => MONOR::MONO,
-                }
+                if value { MONOR::MONO } else { MONOR::STEREO }
             }
             #[doc = "Checks if the value of the field is `STEREO`"]
             #[inline(always)]
@@ -39172,10 +39142,7 @@ pub mod i2s {
             #[doc(hidden)]
             #[inline(always)]
             pub fn _from(value: bool) -> DMAR {
-                match value {
-                    false => DMAR::SINGLE,
-                    true => DMAR::MULTIPLE,
-                }
+                if value { DMAR::MULTIPLE } else { DMAR::SINGLE }
             }
             #[doc = "Checks if the value of the field is `SINGLE`"]
             #[inline(always)]

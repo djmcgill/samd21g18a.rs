@@ -2,6 +2,9 @@
 name = "samd21g18a"
 version = "0.1.0"
 authors = ["David McGillicuddy <contact@djmcgill.co.uk>"]
+documentation = "https://docs.rs/svd2rust/0.11.1/svd2rust/#peripheral-api"
+keywords = ["AT", "SAMD", "no_std"]
+license-file = "LICENCE"
 
 [dependencies]
 bare-metal = "0.1.*"
