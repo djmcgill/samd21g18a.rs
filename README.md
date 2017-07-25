@@ -1,5 +1,4 @@
-Peripheral access API for ATSAMD21G18A microcontrollers
-(generated using svd2rust v0.11.1)
+Peripheral access API for ATSAMD21G18A microcontrollers (generated using svd2rust v0.11.1). Modified by hand by David McGillicuddy (contact@djmcgill.co.uk)
 
 You can find an overview of the API [here](https://docs.rs/svd2rust/0.11.1/svd2rust/#peripheral-api).
 
