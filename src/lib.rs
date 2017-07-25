@@ -388,8 +388,10 @@ pub struct Peripherals<'a> {
     pub PAC2: &'a PAC2,
     #[doc = "PM"]
     pub PM: &'a PM,
-    #[doc = "PORT"]
-    pub PORT: &'a PORT,
+    #[doc = "PORT A"]
+    pub PORTA: &'a PORTA,
+    #[doc = "PORTB"]
+    pub PORTB: &'a PORTB,
     #[doc = "SYSCTRL"]
     pub SYSCTRL: &'a SYSCTRL,
     #[doc = "TCC1"]
@@ -429,7 +431,8 @@ impl<'a> Peripherals<'a> {
             PAC1: &*PAC1.get(),
             PAC2: &*PAC2.get(),
             PM: &*PM.get(),
-            PORT: &*PORT.get(),
+            PORTA: &*PORTA.get(),
+            PORTB: &*PORTB.get(),
             SYSCTRL: &*SYSCTRL.get(),
             TCC1: &*TCC1.get(),
             TCC2: &*TCC2.get(),
