@@ -1,15 +1,22 @@
 [package]
 name = "samd21g18a"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["David McGillicuddy <contact@djmcgill.co.uk>"]
 documentation = "https://docs.rs/svd2rust/0.11.1/svd2rust/#peripheral-api"
-keywords = ["AT", "SAMD", "no_std"]
+keywords = ["AT", "SAMD21", "no_std"]
 license-file = "LICENCE"
 description = "Peripheral access API for ATSAMD21G18A microcontrollers (generated using svd2rust v0.11.1)"
-
 
 [dependencies]
 bare-metal = "0.1.*"
 vcell = "0.1.*"
-cortex-m-rt = "0.3.*"
 cortex-m = "0.3.*"
+
+[features]
+rt = ["cortex-m-rt"]
+rt-abort-on-panic = ["cortex-m-rt/abort-on-panic"]
+
+[dependencies.cortex-m-rt]
+version = "0.3.*"
+optional = true
+
